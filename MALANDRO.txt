@@ -323,12 +323,6 @@ function blueToRedBtn() {
 	}
 }
 
-
-/* Setting the team colors for a game room. */
-room.setTeamColors(Team.BLUE, 60, 0xFFFFFF, [0x0080ff, 0x0080ff, 0x0080ff]);
-room.setTeamColors(Team.RED, 60, 0xFFFFFF, [0xFF4D40, 0xFF4D40, 0xFF4D40]);
-
-
 // time.js
 /**
  * The function checks the time remaining in a game and performs certain actions based on the time and
@@ -931,7 +925,7 @@ function findGK() {
 // Function that is triggered when a player joins
 room.onPlayerJoin = function(player) {
 
-	console.log(player.name + " : " + player.conn);
+	console.log(player.name + " : " + player.conn + " : " + player.auth);
 	extendedP.push([player.id, player.auth, player.conn, false, 0, 0, false]);
 
 	updateRoleOnPlayerIn();
@@ -1135,20 +1129,6 @@ room.onPlayerChat = function (player, message) {
 		var stats;
 		localStorage.getItem(getAuth(player)) ? stats = JSON.parse(localStorage.getItem(getAuth(player))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", player.name, "", "", ""];
 		room.sendAnnouncement("[" + player.name + "] PJ: " + stats[Ss.GA] + ", Victorias: " + stats[Ss.WI] + ", Derrotas: " + stats[Ss.LS] + ", WR: " + stats[Ss.WR] + "%, Goles: " + stats[Ss.GL] + ", Asistencias: " + stats[Ss.AS] + ", GK: " + stats[Ss.GK] + ", CS: " + stats[Ss.CS] + ", CS%: " + stats[Ss.CP] + "%", player.id, 0x30FF91, "bold", 1);
-
-	}
-
-	// Entry admin message setting
-	else if ((["!mensaje"].includes(message[0].toLowerCase())) && player.admin == true)  {
-
-		var stats;
-		localStorage.getItem(getAuth(player)) ? stats = JSON.parse(localStorage.getItem(getAuth(player))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", player.name, "", "", ""];
-
-		const remainingWords = message.slice(1).join(" ");
-
-		stats[Ss.MSG] = remainingWords;
-		localStorage.setItem(getAuth(player), JSON.stringify(stats));
-		room.sendAnnouncement(Bot + "Bienvenida de jugador cambiada exitosamente a [ " + remainingWords + " ]", player.id, 0x6FE35D, "bold", 1);
 
 	}
 
