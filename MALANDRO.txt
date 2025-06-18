@@ -1046,7 +1046,7 @@ room.onPlayerChat = function (player, message) {
 	{
 		room.sendAnnouncement(" Comandos : !me, t [chat para team], !dc, !tabla, !elo, !afk, !bb ", player.id, 0x32BBED, "bold", 2);
 		player.admin ? room.sendAnnouncement(Bot + " : [Admin] !mute <#id> y duración <minutos>, !unmute all/#<id>, !clearbans <number = all>", player.id, 0xC390FC, "bold", 2) : null;
-				player.admin ? room.sendAnnouncement(Bot + " : [Admin] | !color <htmlcolor> | !message <mensaje> | !emoji <emoji>", player.id, 0xC390FC, "bold", 2) : null;
+				player.admin ? room.sendAnnouncement(Bot + " : [Admin] | !color <htmlcolor> | !emoji <emoji>", player.id, 0xC390FC, "bold", 2) : null;
 	}
 
     else if (message == "!elo")
