@@ -583,80 +583,77 @@ function updateRoleOnPlayerIn() {
 	}
 	balanceTeams();
 }
-
-/**
- * The function `updateRoleOnPlayerOut` is responsible for updating the roles and teams of players in a
- * game, handling situations such as players leaving or joining teams, balancing teams, and ending the
- * game if there is an abandonment.
- */
 function updateRoleOnPlayerOut() {
     updateTeams();
-	if (room.getScores() != null) {
-		var scores = room.getScores();
-		if (players.length >= 2 * maxTeamSize && scores.time >= (5/6) * game.scores.timeLimit && teamR.length != teamB.length) {
-			if (teamR.length < teamB.length) {
-				if (scores.blue - scores.red == 2) {
-					endGame(Team.BLUE);
-					room.sendAnnouncement(Bot + "🤖 Abandono detectado. Juego terminado 🤖", null, 0x4ffaff, "bold", 2);
-					setTimeout(() => { room.stopGame(); }, 100);
-					return;
-				}
-			}
-			else {
-				if (scores.red - scores.blue == 2) {
-					endGame(Team.RED);
-					room.sendAnnouncement("🤖 Abandono detectado. Juego terminado 🤖", null, 0x4ffaff, "bold", 2);
-					setTimeout(() => { room.stopGame(); }, 100);
-					return;
-				}
-			}
-		}
-	}
-	if (inChooseMode) {
-		if (players.length == 5) {
-			loadMap(classicMap, scoreLimitClassic, timeLimitClassic);
-		}
-		if (teamR.length == 0 || teamB.length == 0) {
-    if (teamS.length > 0) {
-        const player = teamS[0];
-        const targetTeam = teamR.length == 0 ? Team.RED : Team.BLUE;
-        room.setPlayerTeam(player.id, targetTeam);
-    }
-    return;
-}
 
-		}
-		if (Math.abs(teamR.length - teamB.length) == teamS.length) {
-			room.sendAnnouncement("No hay alternativa, déjame manejar esta situación ...", null, 0x4ffaff, "bold", 2);
-			deactivateChooseMode();
-			resumeGame();
-			var b = teamS.length;
-			if (teamR.length > teamB.length) {
-				for (var i = 0 ; i < b ; i++) {
-					setTimeout(() => { room.setPlayerTeam(teamS[0].id, Team.BLUE); }, 5*i);
-				}
-			}
-			else {
-				for (var i = 0 ; i < b ; i++) {
-					setTimeout(() => { room.setPlayerTeam(teamS[0].id, Team.RED); }, 5*i);
-				}
-			}
-			return;
-		}
-		if (streak == 0 && room.getScores() == null) {
-			if (Math.abs(teamR.length - teamB.length) == 2) { // if someone left a team has 2 more players than the other one, put the last chosen guy back in his place so it's fair
-				room.sendAnnouncement(Bot + " Equilibrando equipos... ", null, 0x4ffaff, "bold", 1);
-				teamR.length > teamB.length ? room.setPlayerTeam(teamR[teamR.length - 1].id, Team.SPECTATORS) : room.setPlayerTeam(teamB[teamB.length - 1].id, Team.SPECTATORS);
-			}
-		}
-		if (teamR.length == teamB.length && teamS.length < 2) {
-			deactivateChooseMode();
-			resumeGame();
-			return;
-		}
-		capLeft ? choosePlayer() : getSpecList(teamR.length <= teamB.length ? teamR[0] : teamB[0]);
-	}
-	balanceTeams();
+    const scores = room.getScores();
+    if (scores != null) {
+        const scoreDiff = Math.abs(scores.red - scores.blue);
+        if (players.length >= 2 * maxTeamSize &&
+            scores.time >= (5 / 6) * game.scores.timeLimit &&
+            teamR.length != teamB.length) {
+
+            const leadingTeam = teamR.length < teamB.length ? Team.BLUE : Team.RED;
+            const margin = leadingTeam == Team.RED ? scores.red - scores.blue : scores.blue - scores.red;
+
+            if (margin === 2) {
+                endGame(leadingTeam);
+                room.sendAnnouncement(Bot + "🤖 Abandono detectado. Juego terminado 🤖", null, 0x4ffaff, "bold", 2);
+                setTimeout(() => room.stopGame(), 100);
+                return;
+            }
+        }
+    }
+
+    if (inChooseMode) {
+        if (players.length === 5) {
+            loadMap(classicMap, scoreLimitClassic, timeLimitClassic);
+        }
+
+        if (teamR.length === 0 || teamB.length === 0) {
+            if (teamS.length > 0) {
+                const player = teamS[0];
+                const targetTeam = teamR.length === 0 ? Team.RED : Team.BLUE;
+                room.setPlayerTeam(player.id, targetTeam);
+            }
+            return;
+        }
+
+        if (Math.abs(teamR.length - teamB.length) === teamS.length) {
+            room.sendAnnouncement("No hay alternativa, déjame manejar esta situación ...", null, 0x4ffaff, "bold", 2);
+            deactivateChooseMode();
+            resumeGame();
+
+            for (let i = 0; i < teamS.length; i++) {
+                const player = teamS[i];
+                const team = teamR.length > teamB.length ? Team.BLUE : Team.RED;
+                setTimeout(() => {
+                    if (player) room.setPlayerTeam(player.id, team);
+                }, 5 * i);
+            }
+            return;
+        }
+
+        if (streak === 0 && room.getScores() === null) {
+            if (Math.abs(teamR.length - teamB.length) === 2) {
+                room.sendAnnouncement(Bot + " Equilibrando equipos... ", null, 0x4ffaff, "bold", 1);
+                const teamToAdjust = teamR.length > teamB.length ? teamR : teamB;
+                const lastPlayer = teamToAdjust[teamToAdjust.length - 1];
+                if (lastPlayer) room.setPlayerTeam(lastPlayer.id, Team.SPECTATORS);
+            }
+        }
+
+        if (teamR.length === teamB.length && teamS.length < 2) {
+            deactivateChooseMode();
+            resumeGame();
+            return;
+        }
+
+        const cap = teamR.length <= teamB.length ? teamR[0] : teamB[0];
+        capLeft ? choosePlayer() : getSpecList(cap);
+    }
+
+    balanceTeams();
 }
 
 /**
