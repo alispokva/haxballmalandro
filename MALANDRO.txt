@@ -19,7 +19,7 @@ const roomPublic = true;
 const geo = [{"code": "VE", "lat": 40, "lon": -3}];
 
 // Admin password //
-var adminPassword = 3001;
+var adminPassword = 0191;
 
 const room = HBInit({ roomName: roomName, maxPlayers: maxPlayers, public: roomPublic, playerName: botName, geo: geo[0] });
 
@@ -40,8 +40,8 @@ var player_size = 15;
 const playerRadius = 15;
 var ballRadius = 6.25;
 const triggerDistance = playerRadius + ballRadius + 0.01;
-var aloneMap = '{"name":"F","width":620,"height":270,"cameraWidth":0,"cameraHeight":0,"maxViewWidth":0,"cameraFollow":"ball","spawnDistance":140,"redSpawnPoints":[],"blueSpawnPoints":[],"canBeStored":true,"kickOffReset":"partial","bg":{"color":"555555","height":120,"width":140,"type":"hockey","cornerRadius":0,"kickOffRadius":0},"traits":{"ballArea":{"vis":false,"bCoef":1,"cMask":["ball"]},"goalPost":{"radius":8,"invMass":0,"bCoef":0.5},"goalNet":{"vis":true,"bCoef":0.1,"cMask":["ball"]},"kickOffBarrier":{"vis":false,"bCoef":0.1,"cGroup":["redKO","blueKO"],"cMask":["red","blue"]}},"vertexes":[{"x":140,"y":-120,"cMask":["ball"],"trait":"ballArea","vis":true,"color":"FFFFFF"},{"x":140,"y":120,"cMask":["ball"],"trait":"ballArea","vis":true,"color":"FFFFFF"},{"x":-140,"y":-120,"trait":"ballArea","vis":true,"color":"FFFFFF"},{"x":-140,"y":122.22222222222221,"trait":"ballArea","vis":true,"color":"FFFFFF"},{"x":-139.7440593141879,"y":120,"trait":"ballArea","vis":true,"color":"FFFFFF"},{"x":0,"y":-120.88477366255142,"bCoef":1,"cMask":["wall"],"trait":"ballArea","color":"FFFFFF"},{"x":0,"y":120.88477366255142,"bCoef":1,"cMask":["wall"],"trait":"ballArea","color":"FFFFFF"},{"x":-140,"y":-124.6695036437032,"bCoef":1,"cMask":["wall"],"trait":"ballArea"},{"x":-140,"y":-140.87567140268303,"bCoef":1,"cMask":["wall"],"trait":"ballArea"},{"x":120,"y":-138.7294159768704,"bCoef":1,"cMask":["wall"],"trait":"ballArea"},{"x":120,"y":-122.96733072857592,"bCoef":1,"cMask":["wall"],"trait":"ballArea"},{"x":147.5,"y":-120.64617986166415,"bCoef":1,"cMask":["ball"],"trait":"ballArea","curve":0,"vis":false},{"x":147.5,"y":120,"bCoef":1,"cMask":["ball"],"trait":"ballArea","curve":0,"vis":false},{"x":-147.5,"y":-123.12000000000002,"bCoef":1,"cMask":["ball"],"trait":"ballArea","vis":false},{"x":-147.5,"y":122.04000000000002,"bCoef":1,"cMask":["ball"],"trait":"ballArea","vis":false},{"x":0,"y":-54.629629629629626,"bCoef":1,"cMask":["wall"],"trait":"ballArea","curve":190},{"x":0,"y":56.48148148148148,"bCoef":1,"cMask":["wall"],"trait":"ballArea","curve":190},{"x":0,"y":56.88126134608165,"bCoef":1,"cMask":["wall"],"trait":"ballArea","curve":190},{"x":-0.19865574759634885,"y":-54.69293035895264,"bCoef":1,"cMask":["wall"],"trait":"ballArea","curve":190}],"segments":[{"v0":0,"v1":1,"vis":true,"color":"FFFFFF","cMask":["ball"],"trait":"ballArea","x":140},{"v0":2,"v1":3,"vis":true,"color":"FFFFFF","trait":"ballArea","x":-140},{"v0":4,"v1":1,"vis":true,"color":"FFFFFF","trait":"ballArea","y":120},{"v0":2,"v1":0,"vis":true,"color":"FFFFFF","trait":"ballArea","y":-120},{"v0":5,"v1":6,"vis":true,"color":"FFFFFF","bCoef":1,"cMask":["wall"],"trait":"ballArea","x":0},{"v0":11,"v1":12,"curve":0,"vis":false,"color":"FFFFFF","bCoef":1,"cMask":["ball"],"trait":"ballArea","x":147.5},{"v0":13,"v1":14,"vis":false,"color":"FFFFFF","bCoef":1,"cMask":["ball"],"trait":"ballArea","x":-147.5},{"v0":15,"v1":16,"curve":190,"vis":true,"color":"FFFFFF","bCoef":1,"cMask":["wall"],"trait":"ballArea","x":0},{"v0":17,"v1":18,"curve":190,"vis":true,"color":"FFFFFF","bCoef":1,"cMask":["wall"],"trait":"ballArea","x":0}],"goals":[],"discs":[],"planes":[{"normal":[0,1],"dist":-122,"bCoef":1,"cMask":["ball"],"trait":"ballArea"},{"normal":[0,-1],"dist":-122,"bCoef":1,"cMask":["ball"],"trait":"ballArea"}],"joints":[],"playerPhysics":{"radius":15,"bCoef":0.5,"invMass":0.5,"damping":0.96,"cGroup":["red","blue"],"acceleration":0.12,"gravity":[0,0],"kickingAcceleration":0.084,"kickingDamping":0.96,"kickStrength":4.9,"kickback":0},"ballPhysics":{"radius":6.3,"bCoef":0.4,"cMask":["all"],"damping":0.99,"invMass":1.5,"gravity":[0,0],"color":"FFF000","cGroup":["ball"]}}'
-var classicMap = '{"name":"F2","height":230,"width":480,"maxViewWidth":0,"cameraFollow":"ball","spawnDistance":200,"kickOffReset":"partial","bg":{"type":"none","width":400,"height":200,"kickOffRadius":60,"cornerRadius":0,"color":"34414B","goalLine":0},"canBeStored":true,"redSpawnPoints":[],"blueSpawnPoints":[],"playerPhysics":{"bCoef":0,"invMass":0.5,"damping":0.96,"acceleration":0.11,"kickingAcceleration":0.083,"kickingDamping":0.96,"kickStrength":4.2,"cGroup":[],"gravity":[0,0],"radius":15,"kickback":0},"segments":[{"v0":5,"v1":6,"bias":0,"bCoef":0,"curve":0,"vis":true,"cMask":[],"cGroup":[],"color":"ABC2D5"},{"v0":4,"v1":7,"bias":0,"bCoef":0,"curve":0,"vis":true,"cMask":[],"cGroup":[],"color":"ABC2D5"},{"v0":6,"v1":13,"bias":0,"bCoef":0.1,"curve":0,"vis":false,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"color":"000000"},{"v0":7,"v1":12,"bias":0,"bCoef":0.1,"curve":0,"vis":false,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"color":"000000"},{"v0":6,"v1":7,"bias":0,"bCoef":0.1,"curve":180,"vis":true,"cMask":["red","blue"],"cGroup":["redKO"],"color":"D9A472"},{"v0":7,"v1":6,"bias":0,"bCoef":0.1,"curve":180,"vis":true,"cMask":["red","blue"],"cGroup":["blueKO"],"color":"D9A472"},{"v0":18,"v1":19,"bias":0,"bCoef":0,"curve":180,"vis":true,"cMask":[],"cGroup":["wall"],"color":"626262"},{"v0":19,"v1":18,"bias":0,"bCoef":0,"curve":180,"vis":true,"cMask":[],"cGroup":["wall"],"color":"626262"},{"v0":21,"v1":20,"bias":0,"bCoef":0,"curve":150,"vis":true,"cMask":[],"cGroup":["wall"],"color":"626262"},{"v0":22,"v1":23,"bias":0,"bCoef":0,"curve":150,"vis":true,"cMask":[],"cGroup":["wall"],"color":"626262"},{"v0":10,"v1":14,"bias":-10,"bCoef":0.1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"6666FF"},{"v0":28,"v1":29,"bias":-10,"bCoef":0.1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"6666FF"},{"v0":15,"v1":11,"bias":-10,"bCoef":0.1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"6666FF"},{"v0":8,"v1":17,"bias":-10,"bCoef":0.1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"FF6666"},{"v0":31,"v1":30,"bias":-10,"bCoef":0.1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"FF6666"},{"v0":16,"v1":9,"bias":-10,"bCoef":0.1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"FF6666"},{"v0":9,"v1":8,"bias":0,"bCoef":0,"curve":0,"vis":true,"cMask":[],"cGroup":["wall"],"color":"C5C5C5"},{"v0":10,"v1":11,"bias":0,"bCoef":0,"curve":0,"vis":true,"cMask":[],"cGroup":["wall"],"color":"C5C5C5"},{"v0":0,"v1":1,"bias":-10,"bCoef":1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"ABC2D5"},{"v0":25,"v1":10,"bias":-10,"bCoef":1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"ABC2D5"},{"v0":11,"v1":26,"bias":-10,"bCoef":1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"ABC2D5"},{"v0":2,"v1":3,"bias":-10,"bCoef":1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"ABC2D5"},{"v0":27,"v1":8,"bias":-10,"bCoef":1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"ABC2D5"},{"v0":9,"v1":24,"bias":-10,"bCoef":1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"ABC2D5"}],"vertexes":[{"x":-401.4,"y":-200,"bCoef":1,"cMask":[],"cGroup":[]},{"x":401.4,"y":-200,"bCoef":1,"cMask":[],"cGroup":[]},{"x":401.4,"y":200,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-401.4,"y":200,"bCoef":1,"cMask":[],"cGroup":[]},{"x":0,"y":200,"bCoef":1,"cMask":[],"cGroup":[]},{"x":0,"y":-200,"bCoef":1,"cMask":[],"cGroup":[]},{"x":0,"y":-80,"bCoef":1,"cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"x":0,"y":80,"bCoef":1,"cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"x":-400,"y":70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-400,"y":-70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":400,"y":-70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":400,"y":70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":0,"y":230,"bCoef":1,"cMask":[],"cGroup":[]},{"x":0,"y":-230,"bCoef":1,"cMask":[],"cGroup":[]},{"x":436.4,"y":-70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":436.4,"y":70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-436.4,"y":-70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-436.4,"y":70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":0,"y":-1.5,"bCoef":1,"cMask":[],"cGroup":[]},{"x":0,"y":1.5,"bCoef":1,"cMask":[],"cGroup":[]},{"x":400,"y":-135,"bCoef":1,"cMask":[],"cGroup":[]},{"x":400,"y":135,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-400,"y":-135,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-400,"y":135,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-400,"y":-201.4,"bCoef":1,"cMask":[],"cGroup":[]},{"x":400,"y":-201.4,"bCoef":1,"cMask":[],"cGroup":[]},{"x":400,"y":201.4,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-400,"y":201.4,"bCoef":1,"cMask":[],"cGroup":[]},{"x":435,"y":-71.4,"bCoef":1,"cMask":[],"cGroup":[]},{"x":435,"y":71.4,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-435,"y":-71.4,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-435,"y":71.4,"bCoef":1,"cMask":[],"cGroup":[]}],"goals":[{"p0":[-407.9,70],"p1":[-407.9,-70],"team":"red"},{"p0":[407.9,70],"p1":[407.9,-70],"team":"blue"}],"planes":[{"normal":[0,1],"dist":-230,"bCoef":0,"cMask":["all"],"cGroup":["wall"]},{"normal":[0,-1],"dist":-230,"bCoef":0,"cMask":["all"],"cGroup":["wall"]},{"normal":[1,0],"dist":-480,"bCoef":0,"cMask":["all"],"cGroup":["wall"]},{"normal":[-1,0],"dist":-480,"bCoef":0,"cMask":["all"],"cGroup":["wall"]}],"discs":[{"pos":[-400,-70],"speed":[0,0],"gravity":[0,0],"radius":5.4,"bCoef":0.5,"invMass":0,"damping":0.99,"color":"31726","cMask":["all"],"cGroup":["all"]},{"pos":[-400,70],"speed":[0,0],"gravity":[0,0],"radius":5.4,"bCoef":0.5,"invMass":0,"damping":0.99,"color":"31726","cMask":["all"],"cGroup":["all"]},{"pos":[400,-70],"speed":[0,0],"gravity":[0,0],"radius":5.4,"bCoef":0.5,"invMass":0,"damping":0.99,"color":"31726","cMask":["all"],"cGroup":["all"]},{"pos":[400,70],"speed":[0,0],"gravity":[0,0],"radius":5.4,"bCoef":0.5,"invMass":0,"damping":0.99,"color":"31726","cMask":["all"],"cGroup":["all"]}],"joints":[],"ballPhysics":{"speed":[0,0],"gravity":[0,0],"radius":5.8,"bCoef":0.412,"invMass":1.55,"damping":0.99,"color":"FFF26D","cMask":["all"],"cGroup":["ball","kick","score"]}}'; // Insert your map for 1v1 and 2v2 here. To get minimum file size, here are the instructions : 1. Download the map 2. Go to https://cssminifier.com 3. Paste the result
+var aloneMap = '{"name":"F","width":620,"height":270,"cameraWidth":0,"cameraHeight":0,"maxViewWidth":0,"cameraFollow":"ball","spawnDistance":140,"redSpawnPoints":[],"blueSpawnPoints":[],"canBeStored":true,"kickOffReset":"partial","bg":{"color":"555555","height":120,"width":140,"type":"hockey","cornerRadius":0,"kickOffRadius":0},"traits":{"ballArea":{"vis":false,"bCoef":1,"cMask":["ball"]},"goalPost":{"radius":8,"invMass":0,"bCoef":0.5},"goalNet":{"vis":true,"bCoef":0.1,"cMask":["ball"]},"kickOffBarrier":{"vis":false,"bCoef":0.1,"cGroup":["redKO","blueKO"],"cMask":["red","blue"]}},"vertexes":[{"x":140,"y":-120,"cMask":["ball"],"trait":"ballArea","vis":true,"color":"FFFFFF"},{"x":140,"y":120,"cMask":["ball"],"trait":"ballArea","vis":true,"color":"FFFFFF"},{"x":-140,"y":-120,"trait":"ballArea","vis":true,"color":"FFFFFF"},{"x":-140,"y":122.22222222222221,"trait":"ballArea","vis":true,"color":"FFFFFF"},{"x":-139.7440593141879,"y":120,"trait":"ballArea","vis":true,"color":"FFFFFF"},{"x":0,"y":-120.88477366255142,"bCoef":1,"cMask":["wall"],"trait":"ballArea","color":"FFFFFF"},{"x":0,"y":120.88477366255142,"bCoef":1,"cMask":["wall"],"trait":"ballArea","color":"FFFFFF"},{"x":-140,"y":-124.6695036437032,"bCoef":1,"cMask":["wall"],"trait":"ballArea"},{"x":-140,"y":-140.87567140268303,"bCoef":1,"cMask":["wall"],"trait":"ballArea"},{"x":120,"y":-138.7294159768704,"bCoef":1,"cMask":["wall"],"trait":"ballArea"},{"x":120,"y":-122.96733072857592,"bCoef":1,"cMask":["wall"],"trait":"ballArea"},{"x":147.5,"y":-120.64617986166415,"bCoef":1,"cMask":["ball"],"trait":"ballArea","curve":0,"vis":false},{"x":147.5,"y":120,"bCoef":1,"cMask":["ball"],"trait":"ballArea","curve":0,"vis":false},{"x":-147.5,"y":-123.12000000000002,"bCoef":1,"cMask":["ball"],"trait":"ballArea","vis":false},{"x":-147.5,"y":122.04000000000002,"bCoef":1,"cMask":["ball"],"trait":"ballArea","vis":false},{"x":0,"y":-54.629629629629626,"bCoef":1,"cMask":["wall"],"trait":"ballArea","curve":190},{"x":0,"y":56.48148148148148,"bCoef":1,"cMask":["wall"],"trait":"ballArea","curve":190},{"x":0,"y":56.88126134608165,"bCoef":1,"cMask":["wall"],"trait":"ballArea","curve":190},{"x":-0.19865574759634885,"y":-54.69293035895264,"bCoef":1,"cMask":["wall"],"trait":"ballArea","curve":190}],"segments":[{"v0":0,"v1":1,"vis":true,"color":"FFFFFF","cMask":["ball"],"trait":"ballArea","x":140},{"v0":2,"v1":3,"vis":true,"color":"FFFFFF","trait":"ballArea","x":-140},{"v0":4,"v1":1,"vis":true,"color":"FFFFFF","trait":"ballArea","y":120},{"v0":2,"v1":0,"vis":true,"color":"FFFFFF","trait":"ballArea","y":-120},{"v0":5,"v1":6,"vis":true,"color":"FFFFFF","bCoef":1,"cMask":["wall"],"trait":"ballArea","x":0},{"v0":11,"v1":12,"curve":0,"vis":false,"color":"FFFFFF","bCoef":1,"cMask":["ball"],"trait":"ballArea","x":147.5},{"v0":13,"v1":14,"vis":false,"color":"FFFFFF","bCoef":1,"cMask":["ball"],"trait":"ballArea","x":-147.5},{"v0":15,"v1":16,"curve":190,"vis":true,"color":"FFFFFF","bCoef":1,"cMask":["wall"],"trait":"ballArea","x":0},{"v0":17,"v1":18,"curve":190,"vis":true,"color":"FFFFFF","bCoef":1,"cMask":["wall"],"trait":"ballArea","x":0}],"goals":[],"discs":[],"planes":[{"normal":[0,1],"dist":-122,"bCoef":1,"cMask":["ball"],"trait":"ballArea"},{"normal":[0,-1],"dist":-122,"bCoef":1,"cMask":["ball"],"trait":"ballArea"}],"joints":[],"playerPhysics":{"radius":15,"bCoef":0.5,"invMass":0.5,"damping":0.96,"cGroup":["red","blue"],"acceleration":0.1,"gravity":[0,0],"kickingAcceleration":0.083,"kickingDamping":0.96,"kickStrength":5,"kickback":0},"ballPhysics":{"radius":6.4,"bCoef":0.4,"cMask":["all"],"damping":0.99,"invMass":1.5,"gravity":[0,0],"color":"FFF000","cGroup":["ball"]}}'
+var classicMap = '{"name":"BFF from HaxMaps","height":230,"width":480,"maxViewWidth":0,"cameraFollow":"ball","spawnDistance":200,"kickOffReset":"partial","bg":{"type":"none","width":400,"height":200,"kickOffRadius":60,"cornerRadius":0,"color":"323334","goalLine":0},"canBeStored":true,"redSpawnPoints":[],"blueSpawnPoints":[],"playerPhysics":{"bCoef":0,"invMass":0.5,"damping":0.96,"acceleration":0.11,"kickingAcceleration":0.083,"kickingDamping":0.96,"kickStrength":4.2,"cGroup":[],"gravity":[0,0],"radius":15,"kickback":0},"segments":[{"v0":5,"v1":6,"bias":0,"bCoef":0,"curve":0,"vis":true,"cMask":[],"cGroup":[],"color":"ABC2D5"},{"v0":4,"v1":7,"bias":0,"bCoef":0,"curve":0,"vis":true,"cMask":[],"cGroup":[],"color":"ABC2D5"},{"v0":6,"v1":13,"bias":0,"bCoef":0.1,"curve":0,"vis":false,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"color":"000000"},{"v0":7,"v1":12,"bias":0,"bCoef":0.1,"curve":0,"vis":false,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"color":"000000"},{"v0":6,"v1":7,"bias":0,"bCoef":0.1,"curve":180,"vis":true,"cMask":["red","blue"],"cGroup":["redKO"],"color":"3e4041"},{"v0":7,"v1":6,"bias":0,"bCoef":0.1,"curve":180,"vis":true,"cMask":["red","blue"],"cGroup":["blueKO"],"color":"D9A472"},{"v0":18,"v1":19,"bias":0,"bCoef":0,"curve":180,"vis":true,"cMask":[],"cGroup":["wall"],"color":"626262"},{"v0":19,"v1":18,"bias":0,"bCoef":0,"curve":180,"vis":true,"cMask":[],"cGroup":["wall"],"color":"626262"},{"v0":21,"v1":20,"bias":0,"bCoef":0,"curve":150,"vis":true,"cMask":[],"cGroup":["wall"],"color":"626262"},{"v0":22,"v1":23,"bias":0,"bCoef":0,"curve":150,"vis":true,"cMask":[],"cGroup":["wall"],"color":"626262"},{"v0":10,"v1":14,"bias":-10,"bCoef":0.1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"6666FF"},{"v0":28,"v1":29,"bias":-10,"bCoef":0.1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"6666FF"},{"v0":15,"v1":11,"bias":-10,"bCoef":0.1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"6666FF"},{"v0":8,"v1":17,"bias":-10,"bCoef":0.1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"FF6666"},{"v0":31,"v1":30,"bias":-10,"bCoef":0.1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"FF6666"},{"v0":16,"v1":9,"bias":-10,"bCoef":0.1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"FF6666"},{"v0":9,"v1":8,"bias":0,"bCoef":0,"curve":0,"vis":true,"cMask":[],"cGroup":["wall"],"color":"C5C5C5"},{"v0":10,"v1":11,"bias":0,"bCoef":0,"curve":0,"vis":true,"cMask":[],"cGroup":["wall"],"color":"C5C5C5"},{"v0":0,"v1":1,"bias":-10,"bCoef":1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"ABC2D5"},{"v0":25,"v1":10,"bias":-10,"bCoef":1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"ABC2D5"},{"v0":11,"v1":26,"bias":-10,"bCoef":1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"ABC2D5"},{"v0":2,"v1":3,"bias":-10,"bCoef":1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"ABC2D5"},{"v0":27,"v1":8,"bias":-10,"bCoef":1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"ABC2D5"},{"v0":9,"v1":24,"bias":-10,"bCoef":1,"curve":0,"vis":true,"cMask":["ball"],"cGroup":["wall"],"color":"ABC2D5"}],"vertexes":[{"x":-401.4,"y":-200,"bCoef":1,"cMask":[],"cGroup":[]},{"x":401.4,"y":-200,"bCoef":1,"cMask":[],"cGroup":[]},{"x":401.4,"y":200,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-401.4,"y":200,"bCoef":1,"cMask":[],"cGroup":[]},{"x":0,"y":200,"bCoef":1,"cMask":[],"cGroup":[]},{"x":0,"y":-200,"bCoef":1,"cMask":[],"cGroup":[]},{"x":0,"y":-80,"bCoef":1,"cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"x":0,"y":80,"bCoef":1,"cMask":["red","blue"],"cGroup":["redKO","blueKO"]},{"x":-400,"y":70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-400,"y":-70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":400,"y":-70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":400,"y":70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":0,"y":230,"bCoef":1,"cMask":[],"cGroup":[]},{"x":0,"y":-230,"bCoef":1,"cMask":[],"cGroup":[]},{"x":436.4,"y":-70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":436.4,"y":70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-436.4,"y":-70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-436.4,"y":70,"bCoef":1,"cMask":[],"cGroup":[]},{"x":0,"y":-1.5,"bCoef":1,"cMask":[],"cGroup":[]},{"x":0,"y":1.5,"bCoef":1,"cMask":[],"cGroup":[]},{"x":400,"y":-135,"bCoef":1,"cMask":[],"cGroup":[]},{"x":400,"y":135,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-400,"y":-135,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-400,"y":135,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-400,"y":-201.4,"bCoef":1,"cMask":[],"cGroup":[]},{"x":400,"y":-201.4,"bCoef":1,"cMask":[],"cGroup":[]},{"x":400,"y":201.4,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-400,"y":201.4,"bCoef":1,"cMask":[],"cGroup":[]},{"x":435,"y":-71.4,"bCoef":1,"cMask":[],"cGroup":[]},{"x":435,"y":71.4,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-435,"y":-71.4,"bCoef":1,"cMask":[],"cGroup":[]},{"x":-435,"y":71.4,"bCoef":1,"cMask":[],"cGroup":[]}],"goals":[{"p0":[-407.9,70],"p1":[-407.9,-70],"team":"red"},{"p0":[407.9,70],"p1":[407.9,-70],"team":"blue"}],"planes":[{"normal":[0,1],"dist":-230,"bCoef":0,"cMask":["all"],"cGroup":["wall"]},{"normal":[0,-1],"dist":-230,"bCoef":0,"cMask":["all"],"cGroup":["wall"]},{"normal":[1,0],"dist":-480,"bCoef":0,"cMask":["all"],"cGroup":["wall"]},{"normal":[-1,0],"dist":-480,"bCoef":0,"cMask":["all"],"cGroup":["wall"]}],"discs":[{"pos":[-400,-70],"speed":[0,0],"gravity":[0,0],"radius":5.4,"bCoef":0.5,"invMass":0,"damping":0.99,"color":"31726","cMask":["all"],"cGroup":["all"]},{"pos":[-400,70],"speed":[0,0],"gravity":[0,0],"radius":5.4,"bCoef":0.5,"invMass":0,"damping":0.99,"color":"31726","cMask":["all"],"cGroup":["all"]},{"pos":[400,-70],"speed":[0,0],"gravity":[0,0],"radius":5.4,"bCoef":0.5,"invMass":0,"damping":0.99,"color":"31726","cMask":["all"],"cGroup":["all"]},{"pos":[400,70],"speed":[0,0],"gravity":[0,0],"radius":5.4,"bCoef":0.5,"invMass":0,"damping":0.99,"color":"31726","cMask":["all"],"cGroup":["all"]}],"joints":[],"ballPhysics":{"speed":[0,0],"gravity":[0,0],"radius":5.8,"bCoef":0.412,"invMass":1.55,"damping":0.99,"color":"dcd2a8","cMask":["all"],"cGroup":["ball","kick","score"]}}'; // Insert your map for 1v1 and 2v2 here. To get minimum file size, here are the instructions : 1. Download the map 2. Go to https://cssminifier.com 3. Paste the result
 var bigMap = '{"name":"F3","width":620,"height":270,"spawnDistance":350,"bg":{"type":"hockey","width":550,"height":240,"kickOffRadius":80,"cornerRadius":0},"vertexes":[{"x":550,"y":240,"trait":"ballArea"},{"x":550,"y":-240,"trait":"ballArea"},{"x":0,"y":270,"trait":"kickOffBarrier"},{"x":0,"y":80,"bCoef":0.15,"trait":"kickOffBarrier","color":"F8F8F8","vis":true,"curve":180},{"x":0,"y":-80,"bCoef":0.15,"trait":"kickOffBarrier","color":"F8F8F8","vis":true,"curve":180},{"x":0,"y":-270,"trait":"kickOffBarrier"},{"x":-550,"y":-80,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,-80]},{"x":-590,"y":-80,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,-80]},{"x":-590,"y":80,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,80]},{"x":-550,"y":80,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,80]},{"x":550,"y":-80,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[700,-80]},{"x":590,"y":-80,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[700,-80]},{"x":590,"y":80,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[700,80]},{"x":550,"y":80,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[700,80]},{"x":-550,"y":80,"bCoef":1.15,"cMask":["ball"],"trait":"ballArea","color":"F8F8F8","pos":[-700,80]},{"x":-550,"y":240,"bCoef":1.15,"cMask":["ball"],"trait":"ballArea","color":"F8F8F8"},{"x":-550,"y":-80,"bCoef":1.15,"cMask":["ball"],"trait":"ballArea","color":"F8F8F8","pos":[-700,-80]},{"x":-550,"y":-240,"bCoef":1.15,"cMask":["ball"],"trait":"ballArea","color":"F8F8F8"},{"x":-550,"y":240,"bCoef":1,"cMask":["ball"],"trait":"ballArea"},{"x":550,"y":240,"bCoef":1,"cMask":["ball"],"trait":"ballArea"},{"x":550,"y":80,"bCoef":1.15,"cMask":["ball"],"trait":"ballArea","pos":[700,80]},{"x":550,"y":240,"bCoef":1.15,"cMask":["ball"],"trait":"ballArea"},{"x":550,"y":-240,"bCoef":1.15,"cMask":["ball"],"trait":"ballArea","color":"F8F8F8"},{"x":550,"y":-80,"bCoef":1.15,"cMask":["ball"],"trait":"ballArea","color":"F8F8F8","pos":[700,-80]},{"x":550,"y":-240,"bCoef":0,"cMask":["ball"],"trait":"ballArea"},{"x":550,"y":-240,"bCoef":0,"cMask":["ball"],"trait":"ballArea"},{"x":-550,"y":-240,"bCoef":1,"cMask":["ball"],"trait":"ballArea","curve":0},{"x":550,"y":-240,"bCoef":1,"cMask":["ball"],"trait":"ballArea","curve":0},{"x":0,"y":-240,"bCoef":0.1,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"trait":"kickOffBarrier"},{"x":0,"y":-80,"bCoef":0.1,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"trait":"kickOffBarrier"},{"x":0,"y":80,"bCoef":0.1,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"trait":"kickOffBarrier"},{"x":0,"y":240,"bCoef":0.1,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"trait":"kickOffBarrier"},{"x":0,"y":-80,"bCoef":0.1,"cMask":["red","blue"],"trait":"kickOffBarrier","vis":true,"color":"F8F8F8"},{"x":0,"y":80,"bCoef":0.1,"cMask":["red","blue"],"trait":"kickOffBarrier","vis":true,"color":"F8F8F8"},{"x":0,"y":80,"trait":"kickOffBarrier","color":"F8F8F8","vis":true,"curve":-180},{"x":0,"y":-80,"trait":"kickOffBarrier","color":"F8F8F8","vis":true,"curve":-180},{"x":0,"y":80,"trait":"kickOffBarrier","color":"F8F8F8","vis":true,"curve":0},{"x":0,"y":-80,"trait":"kickOffBarrier","color":"F8F8F8","vis":true,"curve":0},{"x":-557.5,"y":80,"bCoef":1,"cMask":["ball"],"trait":"ballArea","curve":0,"vis":false,"pos":[-700,80]},{"x":-557.5,"y":240,"bCoef":1,"cMask":["ball"],"trait":"ballArea","curve":0,"vis":false},{"x":-557.5,"y":-240,"bCoef":1,"cMask":["ball"],"trait":"ballArea","vis":false,"curve":0},{"x":-557.5,"y":-80,"bCoef":1,"cMask":["ball"],"trait":"ballArea","vis":false,"curve":0,"pos":[-700,-80]},{"x":557.5,"y":-240,"bCoef":1,"cMask":["ball"],"trait":"ballArea","vis":false,"curve":0},{"x":557.5,"y":-80,"bCoef":1,"cMask":["ball"],"trait":"ballArea","vis":false,"curve":0,"pos":[700,-80]},{"x":557.5,"y":80,"bCoef":1,"cMask":["ball"],"trait":"ballArea","curve":0,"vis":false,"pos":[700,80]},{"x":557.5,"y":240,"bCoef":1,"cMask":["ball"],"trait":"ballArea","curve":0,"vis":false},{"x":0,"y":-80,"bCoef":0.1,"trait":"line"},{"x":0,"y":80,"bCoef":0.1,"trait":"line"},{"x":-550,"y":-80,"bCoef":0.1,"trait":"line"},{"x":-550,"y":80,"bCoef":0.1,"trait":"line"},{"x":550,"y":-80,"bCoef":0.1,"trait":"line"},{"x":550,"y":80,"bCoef":0.1,"trait":"line"},{"x":-550,"y":200,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":-90},{"x":-390,"y":70,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":0},{"x":-550,"y":-200,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":90},{"x":-390,"y":-70,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":0},{"x":550,"y":200,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":90},{"x":390,"y":70,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":90},{"x":550,"y":-200,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":-90},{"x":390,"y":-70,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":-90},{"x":390,"y":70,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":0},{"x":390,"y":-70,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":0}],"segments":[{"v0":6,"v1":7,"curve":0,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","pos":[-700,-80],"y":-80},{"v0":7,"v1":8,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","x":-590},{"v0":8,"v1":9,"curve":0,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","pos":[-700,80],"y":80},{"v0":10,"v1":11,"curve":0,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","pos":[700,-80],"y":-80},{"v0":11,"v1":12,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","x":590},{"v0":12,"v1":13,"curve":0,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","pos":[700,80],"y":80},{"v0":2,"v1":3,"trait":"kickOffBarrier"},{"v0":3,"v1":4,"curve":180,"vis":true,"color":"F8F8F8","bCoef":0.15,"cGroup":["blueKO"],"trait":"kickOffBarrier"},{"v0":3,"v1":4,"curve":-180,"vis":true,"color":"F8F8F8","bCoef":0.15,"cGroup":["redKO"],"trait":"kickOffBarrier"},{"v0":4,"v1":5,"trait":"kickOffBarrier"},{"v0":14,"v1":15,"vis":true,"color":"F8F8F8","bCoef":1.15,"cMask":["ball"],"trait":"ballArea","x":-550},{"v0":16,"v1":17,"vis":true,"color":"F8F8F8","bCoef":1.15,"cMask":["ball"],"trait":"ballArea","x":-550},{"v0":18,"v1":19,"vis":true,"color":"F8F8F8","bCoef":1,"cMask":["ball"],"trait":"ballArea","y":240},{"v0":20,"v1":21,"vis":true,"color":"F8F8F8","bCoef":1.15,"cMask":["ball"],"trait":"ballArea","x":550},{"v0":22,"v1":23,"vis":true,"color":"F8F8F8","bCoef":1.15,"cMask":["ball"],"trait":"ballArea","x":550},{"v0":24,"v1":25,"vis":true,"color":"F8F8F8","bCoef":0,"cMask":["ball"],"trait":"ballArea","x":550,"y":-240},{"v0":26,"v1":27,"curve":0,"vis":true,"color":"F8F8F8","bCoef":1,"cMask":["ball"],"trait":"ballArea","y":-240},{"v0":28,"v1":29,"vis":true,"color":"F8F8F8","bCoef":0.1,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"trait":"kickOffBarrier"},{"v0":30,"v1":31,"vis":true,"color":"F8F8F8","bCoef":0.1,"cMask":["red","blue"],"cGroup":["redKO","blueKO"],"trait":"kickOffBarrier"},{"v0":38,"v1":39,"curve":0,"vis":false,"color":"F8F8F8","bCoef":1,"cMask":["ball"],"trait":"ballArea","x":-557.5},{"v0":40,"v1":41,"curve":0,"vis":false,"color":"F8F8F8","bCoef":1,"cMask":["ball"],"trait":"ballArea","x":-557.5},{"v0":42,"v1":43,"curve":0,"vis":false,"color":"F8F8F8","bCoef":1,"cMask":["ball"],"trait":"ballArea","x":557.5},{"v0":44,"v1":45,"curve":0,"vis":false,"color":"F8F8F8","bCoef":1,"cMask":["ball"],"trait":"ballArea","x":557.5},{"v0":46,"v1":47,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":0},{"v0":48,"v1":49,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-550},{"v0":50,"v1":51,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":550},{"v0":52,"v1":53,"curve":-90,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":54,"v1":55,"curve":90,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":53,"v1":55,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":56,"v1":57,"curve":90,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":58,"v1":59,"curve":-90,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":60,"v1":61,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":390}],"goals":[{"p0":[-557.5,-80],"p1":[-557.5,80],"team":"red"},{"p0":[557.5,80],"p1":[557.5,-80],"team":"blue"}],"discs":[{"radius":5,"pos":[-550,80],"color":"FF6666","trait":"goalPost","y":80},{"radius":5,"pos":[-550,-80],"color":"FF6666","trait":"goalPost","y":-80,"x":-560},{"radius":5,"pos":[550,80],"color":"6666FF","trait":"goalPost","y":80},{"radius":5,"pos":[550,-80],"color":"6666FF","trait":"goalPost","y":-80}],"planes":[{"normal":[0,1],"dist":-240,"bCoef":1,"trait":"ballArea","vis":false,"curve":0},{"normal":[0,-1],"dist":-240,"bCoef":1,"trait":"ballArea"},{"normal":[0,1],"dist":-270,"bCoef":0.1},{"normal":[0,-1],"dist":-270,"bCoef":0.1},{"normal":[1,0],"dist":-620,"bCoef":0.1},{"normal":[-1,0],"dist":-620,"bCoef":0.1},{"normal":[1,0],"dist":-620,"bCoef":0.1,"trait":"ballArea","vis":false,"curve":0},{"normal":[-1,0],"dist":-620,"bCoef":0.1,"trait":"ballArea","vis":false,"curve":0}],"traits":{"ballArea":{"vis":false,"bCoef":1,"cMask":["ball"]},"goalPost":{"radius":8,"invMass":0,"bCoef":0.5},"goalNet":{"vis":true,"bCoef":0.1,"cMask":["ball"]},"line":{"vis":true,"bCoef":0.1,"cMask":[""]},"kickOffBarrier":{"vis":false,"bCoef":0.1,"cGroup":["redKO","blueKO"],"cMask":["red","blue"]}},"playerPhysics":{"bCoef":0,"acceleration":0.12,"kickingAcceleration":0.084,"kickStrength":4.9},"ballPhysics":{"radius":6.3,"bCoef":0.4,"invMass":1.5,"damping":0.99,"color":"FFCC00"},"joints":[],"redSpawnPoints":[],"blueSpawnPoints":[],"canBeStored":false}'; // Read above
 
 
@@ -55,8 +55,8 @@ let slowMode = 0;
 /* PLAYERS */
 const Team = { SPECTATORS: 0, RED: 1, BLUE: 2 };
 const extendedP = [];
-// Player Object ID, AUTH, CONNECTION, AFK STATUS, ACTIVITY, GOALKEEPER, MUTE
-const eP = { ID: 0, AUTH: 1, CONN: 2, AFK: 3, ACT: 4, GK: 5, MUTE: 6};
+// Player Object ID, AUTH, CONNECTION, AFK STATUS, ACTIVITY, GOALKEEPER, MUTE, LAST_MSG_TIME, MSG_COUNT
+const eP = { ID: 0, AUTH: 1, CONN: 2, AFK: 3, ACT: 4, GK: 5, MUTE: 6, LASTMSG: 7, COUNT: 8 };
 // Stats: "Auth" : '["0-Games", "1-Wins", "2-Draws", "3-Losses", "4-Winrate", "5-Goals", "6-Assists", "7-GK", "8-CS", "9-CS%", "10- ELO", "11-Role", "12-Nick", "13-Emoji", "14-Color", "15-MSG"]'
 const Ss = { GA: 0, WI: 1, DR: 2, LS: 3, WR: 4, GL: 5, AS: 6, GK: 7, CS: 8, CP: 9, ELO: 10, RL: 11, NK: 12, EMOJI: 13, COLOR: 14, MSG: 15};
 let players;
@@ -86,45 +86,6 @@ let lastWinner = Team.SPECTATORS;
 let streak = 0;
 let allBlues = []; // This is to count the players who should be counted for the stats. This includes players who left after the game has started, doesn't include those who came too late or ...
 let allReds = []; // ... those who came in a very unequal game.
-
-/**
- * Función para cambiar el radio de un jugador
- * Formato: !radius <ID>-<tamaño> o !radius reset
- */
-function radiusFun(player, message) {
-    if (!player.admin) {
-        room.sendAnnouncement("❌ Solo los admins pueden usar este comando.", player.id, 0xFF0000, "bold", 1);
-        return false;
-    }
-
-    const args = message.split(" ");
-    
-    // Comando !radius <ID>-<tamaño>
-    const parts = args[1].split("-");
-    if (parts.length !== 2 || isNaN(parts[0]) || isNaN(parts[1])) {
-        room.sendAnnouncement("❌ Formato incorrecto. Usa: !radius <ID>-<tamaño> o !radius reset", player.id, 0xFF0000, "bold", 1);
-        return false;
-    }
-
-    const targetId = parseInt(parts[0]);
-    const newRadius = parseFloat(parts[1]);
-
-    // Validar rangos (5-30 es un rango razonable)
-    if (newRadius < 5 || newRadius > 30) {
-        room.sendAnnouncement("❌ El tamaño debe estar entre 5 y 30.", player.id, 0xFF0000, "bold", 1);
-        return false;
-    }
-
-    const targetPlayer = room.getPlayer(targetId);
-    if (!targetPlayer) {
-        room.sendAnnouncement("❌ Jugador no encontrado.", player.id, 0xFF0000, "bold", 1);
-        return false;
-    }
-
-    room.setPlayerDiscProperties(targetId, {radius: newRadius});
-    room.sendAnnouncement(`✅ Tamaño de ${targetPlayer.name} cambiado a ${newRadius}`, null, 0x00FF00, "bold", 1);
-    return false;
-}
 
 /* BALANCE & CHOOSE */
 
@@ -577,77 +538,78 @@ function updateRoleOnPlayerIn() {
 	}
 	balanceTeams();
 }
+
+/**
+ * The function `updateRoleOnPlayerOut` is responsible for updating the roles and teams of players in a
+ * game, handling situations such as players leaving or joining teams, balancing teams, and ending the
+ * game if there is an abandonment.
+ */
 function updateRoleOnPlayerOut() {
     updateTeams();
-
-    const scores = room.getScores();
-    if (scores != null) {
-        const scoreDiff = Math.abs(scores.red - scores.blue);
-        if (players.length >= 2 * maxTeamSize &&
-            scores.time >= (5 / 6) * game.scores.timeLimit &&
-            teamR.length != teamB.length) {
-
-            const leadingTeam = teamR.length < teamB.length ? Team.BLUE : Team.RED;
-            const margin = leadingTeam == Team.RED ? scores.red - scores.blue : scores.blue - scores.red;
-
-            if (margin === 2) {
-                endGame(leadingTeam);
-                room.sendAnnouncement(Bot + " Abandono detectado. Juego terminado ", null, 0x4ffaff, "bold", 2);
-                setTimeout(() => room.stopGame(), 100);
-                return;
-            }
-        }
-    }
-
-    if (inChooseMode) {
-        if (players.length === 5) {
-            loadMap(classicMap, scoreLimitClassic, timeLimitClassic);
-        }
-
-        if (teamR.length === 0 || teamB.length === 0) {
-            if (teamS.length > 0) {
-                const player = teamS[0];
-                const targetTeam = teamR.length === 0 ? Team.RED : Team.BLUE;
-                room.setPlayerTeam(player.id, targetTeam);
-            }
-            return;
-        }
-
-        if (Math.abs(teamR.length - teamB.length) === teamS.length) {
-            room.sendAnnouncement("No hay alternativa, déjame manejar esta situación ...", null, 0x4ffaff, "bold", 2);
-            deactivateChooseMode();
-            resumeGame();
-
-            for (let i = 0; i < teamS.length; i++) {
-                const player = teamS[i];
-                const team = teamR.length > teamB.length ? Team.BLUE : Team.RED;
-                setTimeout(() => {
-                    if (player) room.setPlayerTeam(player.id, team);
-                }, 5 * i);
-            }
-            return;
-        }
-
-        if (streak === 0 && room.getScores() === null) {
-            if (Math.abs(teamR.length - teamB.length) === 2) {
-                room.sendAnnouncement(Bot + " Equilibrando equipos... ", null, 0x4ffaff, "bold", 1);
-                const teamToAdjust = teamR.length > teamB.length ? teamR : teamB;
-                const lastPlayer = teamToAdjust[teamToAdjust.length - 1];
-                if (lastPlayer) room.setPlayerTeam(lastPlayer.id, Team.SPECTATORS);
-            }
-        }
-
-        if (teamR.length === teamB.length && teamS.length < 2) {
-            deactivateChooseMode();
-            resumeGame();
-            return;
-        }
-
-        const cap = teamR.length <= teamB.length ? teamR[0] : teamB[0];
-        capLeft ? choosePlayer() : getSpecList(cap);
-    }
-
-    balanceTeams();
+	if (room.getScores() != null) {
+		var scores = room.getScores();
+		if (players.length >= 2 * maxTeamSize && scores.time >= (5/6) * game.scores.timeLimit && teamR.length != teamB.length) {
+			if (teamR.length < teamB.length) {
+				if (scores.blue - scores.red == 2) {
+					endGame(Team.BLUE);
+					room.sendAnnouncement(Bot + "Abandono detectado. Juego terminado", null, 0x4ffaff, "bold", 2);
+					setTimeout(() => { room.stopGame(); }, 100);
+					return;
+				}
+			}
+			else {
+				if (scores.red - scores.blue == 2) {
+					endGame(Team.RED);
+					room.sendAnnouncement("Abandono detectado. Juego terminado", null, 0x4ffaff, "bold", 2);
+					setTimeout(() => { room.stopGame(); }, 100);
+					return;
+				}
+			}
+		}
+	}
+	if (inChooseMode) {
+		if (players.length == 5) {
+			loadMap(classicMap, scoreLimitClassic, timeLimitClassic);
+		}
+		if (teamR.length == 0 || teamB.length == 0) {
+		if (teamR.length === 0) {
+    room.setPlayerTeam(teamS[0].id, Team.RED);
+} else {
+    room.setPlayerTeam(teamS[0].id, Team.BLUE);
+}
+			return;
+		}
+		if (Math.abs(teamR.length - teamB.length) == teamS.length) {
+			room.sendAnnouncement("No hay alternativa, déjame manejar esta situación ...", null, 0x4ffaff, "bold", 2);
+			deactivateChooseMode();
+			resumeGame();
+			var b = teamS.length;
+			if (teamR.length > teamB.length) {
+				for (var i = 0 ; i < b ; i++) {
+					setTimeout(() => { room.setPlayerTeam(teamS[0].id, Team.BLUE); }, 5*i);
+				}
+			}
+			else {
+				for (var i = 0 ; i < b ; i++) {
+					setTimeout(() => { room.setPlayerTeam(teamS[0].id, Team.RED); }, 5*i);
+				}
+			}
+			return;
+		}
+		if (streak == 0 && room.getScores() == null) {
+			if (Math.abs(teamR.length - teamB.length) == 2) { // if someone left a team has 2 more players than the other one, put the last chosen guy back in his place so it's fair
+				room.sendAnnouncement(Bot + " Equilibrando equipos... ", null, 0x4ffaff, "bold", 1);
+				teamR.length > teamB.length ? room.setPlayerTeam(teamR[teamR.length - 1].id, Team.SPECTATORS) : room.setPlayerTeam(teamB[teamB.length - 1].id, Team.SPECTATORS);
+			}
+		}
+		if (teamR.length == teamB.length && teamS.length < 2) {
+			deactivateChooseMode();
+			resumeGame();
+			return;
+		}
+		capLeft ? choosePlayer() : getSpecList(teamR.length <= teamB.length ? teamR[0] : teamB[0]);
+	}
+	balanceTeams();
 }
 
 /**
@@ -926,7 +888,7 @@ function findGK() {
 room.onPlayerJoin = function(player) {
 
 	console.log(player.name + " : " + player.conn + " : " + player.auth);
-	extendedP.push([player.id, player.auth, player.conn, false, 0, 0, false]);
+	extendedP.push([player.id, player.auth, player.conn, false, 0, 0, false, 0, 0]);
 
 	updateRoleOnPlayerIn();
 
@@ -1026,6 +988,23 @@ room.onPlayerChat = function (player, message) {
 
 	console.log("Nombre " + player.name + " : " + message);
 
+const spamThreshold = 4000; // Tiempo en ms para reiniciar contador
+const maxMsgs = 3; // Nº de mensajes máximos permitidos en ese intervalo
+
+let p = extendedP.find(p => p[eP.ID] === player.id);
+if (p && !player.admin) {
+  const now = Date.now();
+  if (now - p[eP.LASTMSG] < spamThreshold) {
+    p[eP.COUNT]++;
+    if (p[eP.COUNT] > maxMsgs) {
+      room.kickPlayer(player.id, "DEJA EL SPAM O TE PONGO A MAMAR DURO", false);
+      return false;
+    }
+  } else {
+    p[eP.LASTMSG] = now;
+    p[eP.COUNT] = 1;
+  }
+}
 	if (message.startsWith("t "))
 	{
 	room.getPlayerList().filter(callback => callback.team == player.team).forEach(callback => {room.sendAnnouncement("[Chat de equipo] " + player.name + ": " + message.substr(2)/*`[Chat de equipo] > [${player.id}] ${player.name}: ${message.substr(prefixTeamChatString.length)}`*/, callback.id, player.team == 1 ? 0xFA7878 : player.team == 0 ? 0xABFFB6 : 0x00BFFF, "bold", 1)})
@@ -1072,7 +1051,7 @@ room.onPlayerChat = function (player, message) {
         // Create items array
   		top10Array.sort((a, b) => b.elo - a.elo);
 
-        room.sendAnnouncement("-------------LOS 10 MAS GRANDES DE CHATBALL-------------", player.id, 0xFCEC08, "bold", 2);
+        room.sendAnnouncement("-------------TOP MUNDIAL DE FUTSAL CON ARDILLA-------------", player.id, 0xFCEC08, "bold", 2);
 
 		if (message.length > 1) {limit = parseInt(message[1]);}
 
@@ -1157,8 +1136,8 @@ room.onPlayerChat = function (player, message) {
 		room.sendAnnouncement(Bot + "Color del jugador cambiado exitosamente a  [ " + message[1] + " ]", player.id, 0x6FE35D, "bold", 1);
 		}
 	}
-	else if (["!adm"].includes(message[0].toLowerCase())) {
-    console.log("claimsito");
+	else if (["!a"].includes(message[0].toLowerCase())) {
+    console.log("admin");
     if (message[1] == adminPassword) {
         room.setPlayerAdmin(player.id, true);
     }
@@ -1254,29 +1233,7 @@ room.onPlayerChat = function (player, message) {
 		cstm = cstm.substring(0, cstm.length - 2);
 		cstm += ".";
 		room.sendAnnouncement(cstm, player.id);
-}
-else if (message[0].toLowerCase() === "!radius" && player.admin == true) {
-    if (message.length < 2) {
-        room.sendAnnouncement("Uso correcto: !radius <id>-<radio>", player.id, 0xFF0000, "bold", 2);
-        return false;
-    }
-
-    let params = message[1].split("-");
-    
-    if (params.length !== 2 || isNaN(params[0]) || isNaN(params[1])) {
-        room.sendAnnouncement("Formato inválido. Ejemplo: !radius 23-45", player.id, 0xFF0000, "bold", 2);
-        return false;
-    }
-
-    let playerId = parseInt(params[0]);
-    let radius = parseInt(params[1]);
-
-    room.setPlayerDiscProperties(playerId, {radius: radius});
-    room.sendAnnouncement(`Se ha cambiado el radio del jugador ${playerId} a ${radius}`, player.id, 0x00FF00, "bold", 2);
-
-    return false;
-}
-
+	}
 	else if (["!cb"].includes(message[0].toLowerCase())) {
 	if (player.admin) {
 		if (message.length == 1) {
