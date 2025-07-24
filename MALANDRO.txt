@@ -563,13 +563,12 @@ function updateRoleOnPlayerOut() {
 		if (players.length == 5) {
 			loadMap(classicMap, scoreLimitClassic, timeLimitClassic);
 		}
-		if (teamR.length == 0 || teamB.length == 0) {
-		if (teamR.length === 0) {
-    room.setPlayerTeam(teamS[0].id, Team.RED);
-} else {
-    room.setPlayerTeam(teamS[0].id, Team.BLUE);
-}
-			return;
+if ((teamR.length === 0 || teamB.length === 0) && teamS.length > 0) {
+    if (teamR.length === 0) {
+        room.setPlayerTeam(teamS[0].id, Team.RED);
+    } else {
+        room.setPlayerTeam(teamS[0].id, Team.BLUE);
+    }			return;
 		}
 		if (Math.abs(teamR.length - teamB.length) == teamS.length) {
 			room.sendAnnouncement("No hay alternativa, déjame manejar esta situación ...", null, 0x4ffaff, "bold", 2);
