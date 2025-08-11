@@ -1,5 +1,5 @@
 
-const Bot = "ardilla: "; // Bot's name
+const Bot = "Feiraco: "; // Bot's name
 
 // GLOBAL VARIABLES //
 const roomName = "Feiraco 🐮 | 3v3 | Competitive";
@@ -1037,7 +1037,7 @@ if (p && !player.admin) {
         // Create items array
   		top10Array.sort((a, b) => b.elo - a.elo);
 
-        room.sendAnnouncement("-------------TOP MUNDIAL DE FUTSAL CON ARDILLA-------------", player.id, 0xFCEC08, "bold", 2);
+        room.sendAnnouncement("-------------TOP MUNDIAL DE FUTSAL CON FEIRACO-------------", player.id, 0xFCEC08, "bold", 2);
 
 		if (message.length > 1) {limit = parseInt(message[1]);}
 
@@ -1049,7 +1049,7 @@ if (p && !player.admin) {
 
 	else if (message == "!dc" || message == "!dc"){
         // dc
-		room.sendAnnouncement("https://discord.gg/qg3PKnXkHA", player.id, 0xf4AAB32, "bold", 2);
+		room.sendAnnouncement("https://discord.gg/MKTHwkpkTe", player.id, 0xf4AAB32, "bold", 2);
 	}
 	else if (["!afk"].includes(message[0].toLowerCase())) {
 		if (players.length != 1 && player.team != Team.SPECTATORS) {
