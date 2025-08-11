@@ -2,16 +2,16 @@
 const Bot = "ardilla: "; // Bot's name
 
 // GLOBAL VARIABLES //
-const roomName = "ㅤㅤ♲BAZINGA X3 | CON ARDILLA ❤️";
-const botName ="ardilla comebellotas";
+const roomName = "Feiraco 🐮 | 3v3 | Competitive";
+const botName ="Feiraco Cow";
 const maxPlayers = 30;
 const roomPublic = true;
 
 // GEOLOCALIZATION //
-const geo = [{"code": "VE", "lat": 40, "lon": -3}];
+const geo = [{"code": "ES", "lat": 40, "lon": -3}];
 
 // Admin password //
-var adminPassword = 0191;
+var adminPassword = 0194;
 
 const room = HBInit({ roomName: roomName, maxPlayers: maxPlayers, public: roomPublic, playerName: botName, geo: geo[0] });
 
