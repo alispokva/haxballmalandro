@@ -2,13 +2,13 @@
 const Bot = "ardilla: "; // Bot's name
 
 // GLOBAL VARIABLES //
-const roomName = " ☭☭☭☭☭𝐈𝐂𝐄𝐁𝐀𝐋𝐋 𝟑𝐱𝟑|☭☭☭☭☭";
+const roomName = "ICEBALL 3X3| ARDILLA";
 const botName ="ardilla de la era de hielo";
 const maxPlayers = 30;
 const roomPublic = true;
 
 // GEOLOCALIZATION //
-const geo = [{"code": "GL", "lat": 40, "lon": -3}];
+const geo = [{"code": "VE", "lat": 40, "lon": -3}];
 
 // Admin password //
 var adminPassword = 0193;
